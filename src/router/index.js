@@ -7,17 +7,29 @@ import Detail from '../views/Detail.vue'
 Vue.use(VueRouter)
 
 const routes = [
-    {
+    /*{
         path: '/',
         name: 'Login',
         component: Login
-    },
-    /*{
-        path: '/',
-        name: 'Home',
-        component: Home
     },*/
     {
+        path: '/home',
+        name: 'Home',
+        component: Home,
+        children: [
+            {
+                path: 'about',
+                name: 'About',
+                component: () => import( '../views/About.vue')
+            },
+            {
+                path: 'detail',
+                name: 'Detail',
+                component: () => import( '../views/Detail.vue')
+            }
+        ]
+    },
+    /*{
         path: '/about',
         name: 'About',
         component: () => import( '../views/About.vue')
@@ -26,7 +38,7 @@ const routes = [
         path: '/detail',
         name: 'Detail',
         component: () => import( '../views/Detail.vue')
-    }
+    }*/
 ]
 
 const router = new VueRouter({

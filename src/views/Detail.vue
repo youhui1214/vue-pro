@@ -60,7 +60,7 @@
 
 .right {
     flex: 1;
-    background-color: #2c3e50;
+    /*background-color: #2c3e50;*/
 }
 
 
